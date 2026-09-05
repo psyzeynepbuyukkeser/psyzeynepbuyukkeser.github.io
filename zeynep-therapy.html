@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeynep Büyükkeser — Psychologue Clinicienne & Psychanalyste</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            stone: {
+              50: '#fafaf9',
+              100: '#f5f5f4',
+              200: '#e7e5e4',
+              300: '#d6d3d1',
+              400: '#a8a29e',
+              500: '#78716c',
+              600: '#57534e',
+              700: '#44403c',
+              800: '#292524',
+              900: '#1c1917',
+            },
+            warm: {
+              50: '#fdfbf7',
+              100: '#f7f3ed',
+              200: '#efe5d5',
+              300: '#e0d0b8',
+              400: '#c9b08c',
+              500: '#b08d66',
+              600: '#9a7a5c',
+              700: '#7d644d',
+              800: '#665244',
+              900: '#544439',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #78716c;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+    
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      line-height: 0.5;
+      color: #d6d3d1;
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 bg-stone-50/90 backdrop-blur-md z-50 border-b border-stone-200/60">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="font-serif text-xl font-500 text-stone-900 tracking-wide">Z. Büyükkeser</a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-400 text-stone-600">
+        <a href="#about" class="nav-link hover:text-stone-900 transition-colors">À propos</a>
+        <a href="#approach" class="nav-link hover:text-stone-900 transition-colors">Approche</a>
+        <a href="#experience" class="nav-link hover:text-stone-900 transition-colors">Parcours</a>
+        <a href="#publications" class="nav-link hover:text-stone-900 transition-colors">Publications</a>
+        <a href="#contact" class="nav-link hover:text-stone-900 transition-colors">Contact</a>
+      </div>
+      <a href="#contact" class="hidden md:inline-flex items-center px-5 py-2.5 bg-stone-800 text-stone-50 text-sm rounded-full hover:bg-stone-700 transition-colors">
+        Prendre rendez-vous
+      </a>
+      <button id="mobileMenuBtn" class="md:hidden p-2 text-stone-600 hover:text-stone-900">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-stone-200/60 bg-stone-50">
+      <div class="px-6 py-4 flex flex-col gap-3 text-sm text-stone-600">
+        <a href="#about" class="py-2 hover:text-stone-900">À propos</a>
+        <a href="#approach" class="py-2 hover:text-stone-900">Approche</a>
+        <a href="#experience" class="py-2 hover:text-stone-900">Parcours</a>
+        <a href="#publications" class="py-2 hover:text-stone-900">Publications</a>
+        <a href="#contact" class="py-2 hover:text-stone-900">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="pt-32 pb-20 md:pt-44 md:pb-32 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-7 fade-in">
+          <p class="text-stone-500 text-sm tracking-widest uppercase mb-4 font-medium">Psychologue Clinicienne — Paris</p>
+          <h1 class="font-serif text-5xl md:text-7xl font-300 text-stone-900 leading-tight mb-6">
+            Zeynep<br><span class="italic font-300">Büyükkeser</span>
+          </h1>
+          <p class="text-lg md:text-xl text-stone-600 leading-relaxed max-w-lg font-light">
+            Psychothérapie psychanalytique pour adultes, adolescents et enfants. 
+            Un espace de parole pour explorer ce qui fait souffrance et trouver un chemin vers soi.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#contact" class="inline-flex items-center px-7 py-3.5 bg-stone-800 text-stone-50 text-sm rounded-full hover:bg-stone-700 transition-all duration-300">
+              Prendre rendez-vous
+            </a>
+            <a href="#approach" class="inline-flex items-center px-7 py-3.5 border border-stone-300 text-stone-700 text-sm rounded-full hover:border-stone-400 hover:bg-stone-100 transition-all duration-300">
+              Découvrir mon approche
+            </a>
+          </div>
+        </div>
+        <div class="md:col-span-5 fade-in stagger-2">
+          <div class="relative">
+            <div class="aspect-[4/5] bg-stone-200 rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=750&fit=crop&crop=face" 
+                   alt="Portrait d'une psychologue" 
+                   class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-700">
+            </div>
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-warm-200 rounded-full opacity-60 blur-2xl"></div>
+            <div class="absolute -top-4 -left-4 w-32 h-32 bg-stone-200 rounded-full opacity-50 blur-3xl"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="py-20 md:py-28 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="fade-in">
+        <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium">À propos</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-300 text-stone-900 mb-8">Une présence à l'écoute de votre singularité</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10 mt-12">
+        <div class="fade-in stagger-1">
+          <p class="text-stone-600 leading-relaxed mb-6 font-light text-lg">
+            Après avoir obtenu mon Master 2 en Psychologie Clinique Psychanalytique à l'Université Lumière Lyon 2, 
+            j'exerce aujourd'hui en tant que psychologue clinicienne à Paris, auprès d'adultes, d'adolescents et d'enfants.
+          </p>
+          <p class="text-stone-600 leading-relaxed font-light text-lg">
+            Formée dans la tradition psychanalytique, je propose un espace thérapeutique où chaque personne peut 
+            venir avec ses mots, ses silences, sa souffrance — pour lentement se reconstruire.
+          </p>
+        </div>
+        <div class="fade-in stagger-2">
+          <p class="text-stone-600 leading-relaxed mb-6 font-light text-lg">
+            Mon parcours m'a conduite de Lyon à Paris, en passant par des expériences auprès de jeunes en protection 
+            de l'enfance, de personnes âgées, et d'adolescents en souffrance psychique.
+          </p>
+          <p class="text-stone-600 leading-relaxed font-light text-lg">
+            Je travaille actuellement à l'Association Saint-Vincent et à l'Hôpital de Jour pour Enfants de Poissy, 
+            tout en maintenant une pratique de psychothérapie en ligne et en présentiel.
+          </p>
+        </div>
+      </div>
+      <div class="mt-16 pt-10 border-t border-stone-100 fade-in stagger-3">
+        <div class="flex flex-wrap gap-8 md:gap-16">
+          <div>
+            <p class="font-serif text-3xl text-stone-800 font-400">5+</p>
+            <p class="text-stone-500 text-sm mt-1">Années d'expérience</p>
+          </div>
+          <div>
+            <p class="font-serif text-3xl text-stone-800 font-400">M2</p>
+            <p class="text-stone-500 text-sm mt-1">Psychologie Clinique Psychanalytique</p>
+          </div>
+          <div>
+            <p class="font-serif text-3xl text-stone-800 font-400">Paris</p>
+            <p class="text-stone-500 text-sm mt-1">Consultations en présentiel & en ligne</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="py-20 md:py-28 px-6 bg-stone-100">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <div class="quote-mark mb-4">"</div>
+      <blockquote class="font-serif text-2xl md:text-3xl text-stone-700 italic font-300 leading-relaxed -mt-8">
+        La psychanalyse ne promet pas le bonheur — elle offre la possibilité de mieux habiter sa propre vie.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section id="approach" class="py-20 md:py-28 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium">Approche</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-300 text-stone-900">Une thérapie psychanalytique contemporaine</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 fade-in stagger-1 hover:shadow-lg transition-shadow duration-500">
+          <div class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-stone-800 mb-3 font-500">La parole au centre</h3>
+          <p class="text-stone-600 leading-relaxed font-light">
+            La psychanalyse repose sur la parole libre. Dans un cadre régulier et sécurisant, 
+            vous êtes invité·e à dire ce qui vient, sans jugement ni censure.
+          </p>
+        </div>
+        <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 fade-in stagger-2 hover:shadow-lg transition-shadow duration-500">
+          <div class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-stone-800 mb-3 font-500">Adolescents & enfants</h3>
+          <p class="text-stone-600 leading-relaxed font-light">
+            Spécialisée dans l'accompagnement des jeunes, j'adapte ma pratique à chaque âge — 
+            jeux, dessins, et parole pour les plus petits, espace d'expression pour les adolescents.
+          </p>
+        </div>
+        <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 fade-in stagger-3 hover:shadow-lg transition-shadow duration-500">
+          <div class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-serif text-xl text-stone-800 mb-3 font-500">En ligne & présentiel</h3>
+          <p class="text-stone-600 leading-relaxed font-light">
+            Je propose des séances en cabinet à Paris ainsi qu'en visioconférence, 
+            pour permettre à chacun d'accéder à une thérapie quel que soit son emplacement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-20 md:py-28 px-6 bg-stone-50">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium">Parcours</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-300 text-stone-900">Expérience clinique</h2>
+      </div>
+      <div class="space-y-10">
+        <div class="flex flex-col md:flex-row gap-6 md:gap-10 fade-in stagger-1">
+          <div class="md:w-40 flex-shrink-0">
+            <p class="text-stone-400 text-sm font-medium">2025 — Présent</p>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl text-stone-800 font-500 mb-1">Psychologue clinicienne</h3>
+            <p class="text-stone-500 text-sm mb-3">Association Saint-Vincent & Hôpital de Jour pour Enfants, Poissy</p>
+            <p class="text-stone-600 leading-relaxed font-light">
+              Accompagnement thérapeutique d'enfants et d'adolescents en protection de l'enfance. 
+              Entretiens individuels, évaluations cliniques, et participation aux réunions pluridisciplinaires.
+            </p>
+          </div>
+        </div>
+        <div class="border-t border-stone-200"></div>
+        <div class="flex flex-col md:flex-row gap-6 md:gap-10 fade-in stagger-2">
+          <div class="md:w-40 flex-shrink-0">
+            <p class="text-stone-400 text-sm font-medium">2023 — Présent</p>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl text-stone-800 font-500 mb-1">Therapeute</h3>
+            <p class="text-stone-500 text-sm mb-3">İnka Psikoloji (Turquie & France)</p>
+            <p class="text-stone-600 leading-relaxed font-light">
+              Psychothérapie psychanalytique en ligne pour adultes turcophones. Accompagnement des souffrances 
+              liées à l'anxiété, la dépression, et les questions identitaires.
+            </p>
+          </div>
+        </div>
+        <div class="border-t border-stone-200"></div>
+        <div class="flex flex-col md:flex-row gap-6 md:gap-10 fade-in stagger-3">
+          <div class="md:w-40 flex-shrink-0">
+            <p class="text-stone-400 text-sm font-medium">2024 — 2025</p>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl text-stone-800 font-500 mb-1">Psychologue clinicienne</h3>
+            <p class="text-stone-500 text-sm mb-3">AVVEJ, Paris</p>
+            <p class="text-stone-600 leading-relaxed font-light">
+              Intervention auprès de mineurs et de familles en difficulté. Accompagnement psychologique 
+              en milieu ouvert et suivi thérapeutique dans le cadre de la protection de l'enfance.
+            </p>
+          </div>
+        </div>
+        <div class="border-t border-stone-200"></div>
+        <div class="flex flex-col md:flex-row gap-6 md:gap-10 fade-in stagger-4">
+          <div class="md:w-40 flex-shrink-0">
+            <p class="text-stone-400 text-sm font-medium">2023 — 2024</p>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl text-stone-800 font-500 mb-1">Stagiaire en psychologie clinique</h3>
+            <p class="text-stone-500 text-sm mb-3">Maison des Adolescents de Vaucluse & EHPAD Les Aurélias</p>
+            <p class="text-stone-600 leading-relaxed font-light">
+              Prise en charge thérapeutique de jeunes de 11 à 25 ans. Accompagnement des personnes âgées 
+              atteintes de pathologies neurodégénératives et troubles psychiatriques.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications" class="py-20 md:py-28 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-16 fade-in">
+        <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium">Publications</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-300 text-stone-900">Écrits & traductions</h2>
+        <p class="text-stone-600 mt-4 font-light text-lg max-w-2xl">
+          Contribuer à la diffusion de la pensée psychanalytique, en français et en turc.
+        </p>
+      </div>
+      <div class="space-y-6">
+        <a href="https://psikolektif.com/etiket/zeynepbuyukkeser/" target="_blank" 
+           class="block p-6 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 hover:shadow-md transition-all duration-300 fade-in stagger-1 group">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-serif text-lg text-stone-800 font-500 group-hover:text-stone-900 mb-2">
+                Melanie Klein : Hayatı ve Çalışmaları
+              </h3>
+              <p class="text-stone-500 text-sm">Psikolektif — Article sur la vie et l'œuvre de Melanie Klein</p>
+            </div>
+            <svg class="w-5 h-5 text-stone-400 group-hover:text-stone-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </div>
+        </a>
+        <a href="https://psikolektif.com/etiket/zeynepbuyukkeser/" target="_blank" 
+           class="block p-6 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 hover:shadow-md transition-all duration-300 fade-in stagger-2 group">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-serif text-lg text-stone-800 font-500 group-hover:text-stone-900 mb-2">
+                Tekrar Bir Araya Gelebilmek için Birleşmek : Ergenlikte Aile Bağları
+              </h3>
+              <p class="text-stone-500 text-sm">Psikolektif Dergisi, Sayı 21 — Les liens familiaux à l'adolescence</p>
+            </div>
+            <svg class="w-5 h-5 text-stone-400 group-hover:text-stone-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </div>
+        </a>
+        <a href="https://psikolektif.com/etiket/zeynepbuyukkeser/" target="_blank" 
+           class="block p-6 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 hover:shadow-md transition-all duration-300 fade-in stagger-3 group">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-serif text-lg text-stone-800 font-500 group-hover:text-stone-900 mb-2">
+                Duygusal Yaralardan Bedensel Duyumlara Bir Yolculuk : Bağımlılık
+              </h3>
+              <p class="text-stone-500 text-sm">Psikolektif — Du voyage des blessures émotionnelles vers les sensations corporelles : la dépendance</p>
+            </div>
+            <svg class="w-5 h-5 text-stone-400 group-hover:text-stone-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </div>
+        </a>
+      </div>
+      <div class="mt-8 p-6 rounded-xl bg-warm-50 border border-warm-200 fade-in stagger-4">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-warm-200 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-warm-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m0 16v2m9-8h6m-3-3v6M5 12a2 2 0 110-4 2 2 0 010 4zm0 0v8m0-8l6-2m-6 2l6 2"/></svg>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg text-stone-800 font-500 mb-2">Traduction</h4>
+            <p class="text-stone-600 leading-relaxed font-light">
+              Traduction du séminaire <em>"Oyun ve Simgeleştirme"</em> (Jeu et Symbolisation) du psychanalyste 
+              <strong>René Roussillon</strong>, organisé par Psike İstanbul.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 md:py-28 px-6 bg-stone-800 text-stone-100">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16">
+        <div class="fade-in">
+          <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium">Contact</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-300 text-white mb-6">Prendre rendez-vous</h2>
+          <p class="text-stone-300 leading-relaxed font-light text-lg mb-10">
+            La première étape est souvent la plus difficile. Je vous invite à me contacter 
+            pour un entretien préliminaire, sans engagement, afin de discuter de vos besoins.
+          </p>
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center">
+                <svg class="w-5 h-5 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-medium">Paris, Île-de-France</p>
+                <p class="text-stone-400 text-sm">Consultations en présentiel & en ligne</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center">
+                <svg class="w-5 h-5 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <p class="text-white font-medium">contact@zeynepbuyukkeser.fr</p>
+                <p class="text-stone-400 text-sm">Réponse sous 48h</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center">
+                <svg class="w-5 h-5 text-stone-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/zeynepbuyukkeser" target="_blank" class="text-white font-medium hover:text-stone-300 transition-colors">LinkedIn</a>
+                <p class="text-stone-400 text-sm">Suivez mon actualité professionnelle</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in stagger-2">
+          <form class="space-y-5" onsubmit="event.preventDefault(); alert('Merci pour votre message. Je vous recontacterai sous peu.');">
+            <div>
+              <label class="block text-stone-400 text-sm mb-2">Nom</label>
+              <input type="text" required class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:outline-none focus:border-stone-400 transition-colors" placeholder="Votre nom">
+            </div>
+            <div>
+              <label class="block text-stone-400 text-sm mb-2">Email</label>
+              <input type="email" required class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:outline-none focus:border-stone-400 transition-colors" placeholder="votre@email.com">
+            </div>
+            <div>
+              <label class="block text-stone-400 text-sm mb-2">Sujet</label>
+              <select class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white focus:outline-none focus:border-stone-400 transition-colors">
+                <option>Demande de rendez-vous</option>
+                <option>Question sur la thérapie</option>
+                <option>Collaboration professionnelle</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-stone-400 text-sm mb-2">Message</label>
+              <textarea rows="4" required class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:outline-none focus:border-stone-400 transition-colors resize-none" placeholder="Décrivez brièvement votre demande..."></textarea>
+            </div>
+            <button type="submit" class="w-full py-3.5 bg-stone-100 text-stone-800 font-medium rounded-lg hover:bg-white transition-colors">
+              Envoyer
+            </button>
+            <p class="text-stone-500 text-xs text-center">
+              Les informations sont confidentielles et ne seront pas partagées.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 px-6 bg-stone-900 text-stone-500 border-t border-stone-800">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-serif text-lg text-stone-300">Z. Büyükkeser</span>
+        <span class="text-stone-600">·</span>
+        <span class="text-sm">Psychologue clinicienne</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="https://www.linkedin.com/in/zeynepbuyukkeser" target="_blank" class="hover:text-stone-300 transition-colors">LinkedIn</a>
+        <a href="https://psikolektif.com/author/zeynep-buyukkeser/" target="_blank" class="hover:text-stone-300 transition-colors">Psikolektif</a>
+        <a href="#contact" class="hover:text-stone-300 transition-colors">Contact</a>
+      </div>
+      <p class="text-xs text-stone-600"> Numéro ADELI sur demande</p>
+    </div>
+  </footer>
+
+  <script>
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+  </script>
+</body>
+</html>
