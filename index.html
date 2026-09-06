@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zeynep Büyükkeser — Psychologue Clinicienne | Psychothérapie psychanalytique</title>
+  <title>Zeynep Büyükkeser — Psychologue clinicienne et psychothérapeute</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            serif: ['Quicksand', 'sans-serif'],
-            sans: ['Nunito', 'sans-serif'],
+            serif: ['Libre Baskerville', 'Georgia', 'serif'],
+            sans: ['Libre Baskerville', 'Georgia', 'serif'],
           },
           colors: {
             stone: {
@@ -48,6 +48,9 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
+    body { font-size: 16px; }
+    p { line-height: 1.8; }
+
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     .stagger-1 { transition-delay: 0.1s; }
@@ -68,29 +71,31 @@
     }
     .nav-link:hover::after { width: 100%; }
 
+    .eyebrow { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
+
     .quote-mark {
-      font-family: 'Quicksand', sans-serif;
-      font-size: 6rem;
-      line-height: 0.5;
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 5rem;
+      line-height: 0.4;
       color: #d6d3d1;
       user-select: none;
     }
 
     .lang-switch { display: inline-flex; align-items: center; border: 1px solid #d6d3d1; border-radius: 9999px; padding: 2px; }
-    .lang-btn { padding: 4px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em; color: #78716c; transition: all 0.2s ease; cursor: pointer; background: transparent; border: none; }
+    .lang-btn { padding: 4px 10px; border-radius: 9999px; font-size: 0.7rem; letter-spacing: 0.05em; color: #78716c; transition: all 0.2s ease; cursor: pointer; background: transparent; border: none; font-family: inherit; }
     .lang-btn.active { background: #292524; color: #fafaf9; }
     .lang-btn:not(.active):hover { color: #292524; }
   </style>
 </head>
-<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+<body class="bg-stone-50 text-stone-700 font-serif antialiased">
 
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 bg-stone-50/90 backdrop-blur-md z-50 border-b border-stone-200/60">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="font-serif text-xl font-600 text-stone-900 tracking-wide">Z. Büyükkeser</a>
-      <div class="hidden md:flex items-center gap-8 text-sm font-400 text-stone-600">
-        <a href="#about" class="nav-link hover:text-stone-900 transition-colors" data-i18n="nav.about">À propos</a>
+      <a href="#" class="text-base text-stone-900 tracking-wide">Z. Büyükkeser</a>
+      <div class="hidden md:flex items-center gap-7 text-sm text-stone-600">
         <a href="#approach" class="nav-link hover:text-stone-900 transition-colors" data-i18n="nav.approach">Approche</a>
+        <a href="#about" class="nav-link hover:text-stone-900 transition-colors" data-i18n="nav.about">À propos</a>
         <a href="#experience" class="nav-link hover:text-stone-900 transition-colors" data-i18n="nav.experience">Parcours</a>
         <a href="#publications" class="nav-link hover:text-stone-900 transition-colors" data-i18n="nav.publications">Publications</a>
         <a href="#contact" class="nav-link hover:text-stone-900 transition-colors" data-i18n="nav.contact">Contact</a>
@@ -99,6 +104,7 @@
         <div class="lang-switch">
           <button type="button" class="lang-btn" data-lang-btn="fr">FR</button>
           <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+          <button type="button" class="lang-btn" data-lang-btn="tr">TR</button>
         </div>
         <a href="#contact" class="inline-flex items-center px-5 py-2.5 bg-stone-800 text-stone-50 text-sm rounded-full hover:bg-stone-700 transition-colors" data-i18n="nav.cta">
           Prendre rendez-vous
@@ -108,6 +114,7 @@
         <div class="lang-switch">
           <button type="button" class="lang-btn" data-lang-btn="fr">FR</button>
           <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+          <button type="button" class="lang-btn" data-lang-btn="tr">TR</button>
         </div>
         <button id="mobileMenuBtn" class="p-2 text-stone-600 hover:text-stone-900">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -117,8 +124,8 @@
     <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden md:hidden border-t border-stone-200/60 bg-stone-50">
       <div class="px-6 py-4 flex flex-col gap-3 text-sm text-stone-600">
-        <a href="#about" class="py-2 hover:text-stone-900" data-i18n="nav.about">À propos</a>
         <a href="#approach" class="py-2 hover:text-stone-900" data-i18n="nav.approach">Approche</a>
+        <a href="#about" class="py-2 hover:text-stone-900" data-i18n="nav.about">À propos</a>
         <a href="#experience" class="py-2 hover:text-stone-900" data-i18n="nav.experience">Parcours</a>
         <a href="#publications" class="py-2 hover:text-stone-900" data-i18n="nav.publications">Publications</a>
         <a href="#contact" class="py-2 hover:text-stone-900" data-i18n="nav.contact">Contact</a>
@@ -127,17 +134,19 @@
   </nav>
 
   <!-- Hero -->
-  <header class="pt-32 pb-20 md:pt-44 md:pb-32 px-6">
+  <header class="pt-32 pb-20 md:pt-44 md:pb-28 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="grid md:grid-cols-12 gap-12 items-center">
         <div class="md:col-span-7 fade-in">
-          <p class="text-stone-500 text-sm tracking-widest uppercase mb-4 font-medium" data-i18n="hero.eyebrow">Psychologue Clinicienne — Paris</p>
-          <h1 class="font-serif text-5xl md:text-7xl font-300 text-stone-900 leading-tight mb-6">
-            Zeynep<br><span class="font-500">Büyükkeser</span>
+          <p class="text-stone-500 eyebrow mb-5" data-i18n="hero.eyebrow">Psychologue clinicienne et psychothérapeute</p>
+          <h1 class="text-4xl md:text-6xl text-stone-900 leading-tight mb-7">
+            Zeynep<br>Büyükkeser
           </h1>
-          <p class="text-lg md:text-xl text-stone-600 leading-relaxed max-w-lg font-light" data-i18n="hero.desc">
-            Psychothérapie psychanalytique pour adultes et adolescents.
-            Un espace de parole pour explorer ce qui fait souffrance et trouver un chemin vers soi.
+          <p class="text-lg text-stone-600 max-w-md" data-i18n="hero.desc">
+            Psychothérapie psychodynamique pour adultes et adolescents.
+          </p>
+          <p class="text-stone-500 text-sm mt-4" data-i18n="hero.langs">
+            Séances en français, en anglais et en turc.
           </p>
           <div class="mt-10 flex flex-wrap gap-4">
             <a href="#contact" class="inline-flex items-center px-7 py-3.5 bg-stone-800 text-stone-50 text-sm rounded-full hover:bg-stone-700 transition-all duration-300" data-i18n="hero.cta1">
@@ -151,7 +160,7 @@
         <div class="md:col-span-5 fade-in stagger-2">
           <div class="relative">
             <div class="aspect-[4/5] bg-warm-100 rounded-2xl overflow-hidden">
-              <img src="data:image/webp;base64,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" alt="Zeynep Büyükkeser, psychologue clinicienne" data-i18n-alt="hero.imgAlt" class="w-full h-full object-cover">
+              <img src="photo.webp" alt="Zeynep Büyükkeser, psychologue clinicienne" data-i18n-alt="hero.imgAlt" class="w-full h-full object-cover">
             </div>
             <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-warm-200 rounded-full opacity-60 blur-2xl"></div>
             <div class="absolute -top-4 -left-4 w-32 h-32 bg-stone-200 rounded-full opacity-50 blur-3xl"></div>
@@ -161,48 +170,77 @@
     </div>
   </header>
 
-  <!-- About -->
+  <!-- Approche -->
+  <section id="approach" class="py-20 md:py-28 px-6 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-stone-400 eyebrow mb-10 fade-in" data-i18n="approach.eyebrow">Approche</p>
+      <div class="space-y-7 text-lg text-stone-700">
+        <p class="fade-in stagger-1" data-i18n="approach.p1">
+          Des douleurs physiques, des sensations désagréables, de l'angoisse, beaucoup de stress :
+          ce sont des symptômes, et un symptôme dit toujours quelque chose d'une souffrance.
+        </p>
+        <p class="fade-in stagger-2" data-i18n="approach.p2">
+          La psychothérapie propose de regarder de plus près cette souffrance qui se manifeste en vous.
+          Ensemble, nous cherchons à donner du sens au symptôme, à entendre ce qu'il tente de dire.
+        </p>
+        <p class="fade-in stagger-3" data-i18n="approach.p3">
+          Ce travail ouvre sur la découverte de votre monde intérieur et sur la capacité de regarder
+          en soi — ce qu'on appelle l'introspection.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="py-20 md:py-24 px-6 bg-stone-100">
+    <div class="max-w-3xl mx-auto text-center fade-in">
+      <div class="quote-mark mb-6">"</div>
+      <blockquote class="text-xl md:text-2xl text-stone-700 italic leading-relaxed" data-i18n="quote.text">
+        C'est en jouant, et seulement en jouant, que l'individu, enfant ou adulte, est capable d'être créatif.
+      </blockquote>
+      <p class="text-stone-500 text-sm mt-6" data-i18n="quote.author">— D. W. Winnicott, Jeu et réalité</p>
+    </div>
+  </section>
+
+  <!-- À propos -->
   <section id="about" class="py-20 md:py-28 px-6 bg-white">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-3xl mx-auto">
       <div class="fade-in">
-        <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium" data-i18n="about.eyebrow">À propos</p>
-        <h2 class="font-serif text-4xl md:text-5xl font-300 text-stone-900 mb-8" data-i18n="about.heading">Une présence à l'écoute de votre singularité</h2>
+        <p class="text-stone-400 eyebrow mb-5" data-i18n="about.eyebrow">À propos</p>
+        <h2 class="text-2xl md:text-3xl text-stone-900 leading-snug mb-10" data-i18n="about.heading">
+          Un regard pluriel : l'existence, le corps, l'inconscient
+        </h2>
       </div>
-      <div class="grid md:grid-cols-2 gap-10 mt-12">
-        <div class="fade-in stagger-1">
-          <p class="text-stone-600 leading-relaxed mb-6 font-light text-lg" data-i18n="about.p1">
-            Après avoir obtenu mon Master 2 en Psychologie Clinique Psychanalytique à l'Université Lumière Lyon 2,
-            j'exerce aujourd'hui en tant que psychologue clinicienne à Paris, auprès d'adultes et d'adolescents.
-          </p>
-          <p class="text-stone-600 leading-relaxed font-light text-lg" data-i18n="about.p2">
-            Formée dans la tradition psychanalytique, je propose un espace thérapeutique où chaque personne peut
-            venir avec ses mots, ses silences, sa souffrance — pour lentement se reconstruire.
-          </p>
-        </div>
-        <div class="fade-in stagger-2">
-          <p class="text-stone-600 leading-relaxed mb-6 font-light text-lg" data-i18n="about.p3">
-            Mon parcours m'a conduite de Lyon à Paris, avec des expériences en pédopsychiatrie, dans les services
-            sociaux, ainsi qu'auprès de personnes âgées et d'adolescents en souffrance psychique.
-          </p>
-          <p class="text-stone-600 leading-relaxed font-light text-lg" data-i18n="about.p4">
-            Je poursuis aujourd'hui mon travail clinique en pédopsychiatrie et en services sociaux, tout en
-            développant ma pratique de psychothérapie psychanalytique pour adultes et adolescents, actuellement
-            proposée en ligne uniquement.
-          </p>
-        </div>
+      <div class="space-y-7 text-stone-700">
+        <p class="fade-in stagger-1" data-i18n="about.p1">
+          J'ai obtenu mon Master 2 de Psychologie Clinique Psychanalytique à l'Université Lumière Lyon 2.
+          J'exerce aujourd'hui comme psychologue clinicienne auprès d'adultes et d'adolescents.
+        </p>
+        <p class="fade-in stagger-2" data-i18n="about.p2">
+          Formée dans la tradition psychanalytique, j'ai peu à peu intégré d'autres courants à ma pratique :
+          la thérapie existentielle, qui prend au sérieux la condition de l'humain moderne — la solitude,
+          l'isolement, l'absence de sens, l'angoisse de mort ; le travail sur le corps et le système nerveux,
+          à travers les formations que j'ai suivies ; la pleine conscience et la méditation, une manière de
+          relier le corps et l'esprit.
+        </p>
+        <p class="fade-in stagger-3" data-i18n="about.p3">
+          Il s'agit de découvrir votre monde intérieur dans sa singularité et sa subjectivité : comprendre
+          comment vous vous représentez le monde, les relations, votre rapport à la souffrance. Ensemble,
+          nous cherchons à donner du sens — et parfois à déconstruire ce qui demande à l'être.
+        </p>
       </div>
-      <div class="mt-16 pt-10 border-t border-stone-100 fade-in stagger-3">
-        <div class="flex flex-wrap gap-8 md:gap-16">
+      <div class="mt-14 pt-10 border-t border-stone-100 fade-in stagger-4">
+        <div class="flex flex-wrap gap-10 md:gap-16">
           <div>
-            <p class="font-serif text-3xl text-stone-800 font-500">5+</p>
+            <p class="text-2xl text-stone-800">5+</p>
             <p class="text-stone-500 text-sm mt-1" data-i18n="stat1.label">Années d'expérience</p>
           </div>
           <div>
-            <p class="font-serif text-3xl text-stone-800 font-500">M2</p>
+            <p class="text-2xl text-stone-800">M2</p>
             <p class="text-stone-500 text-sm mt-1" data-i18n="stat2.label">Psychologie Clinique Psychanalytique</p>
           </div>
           <div>
-            <p class="font-serif text-3xl text-stone-800 font-500">Paris</p>
+            <p class="text-2xl text-stone-800">Paris</p>
             <p class="text-stone-500 text-sm mt-1" data-i18n="stat3.label">Consultations en ligne (pour le moment)</p>
           </div>
         </div>
@@ -210,103 +248,53 @@
     </div>
   </section>
 
-  <!-- Quote -->
-  <section class="py-20 md:py-28 px-6 bg-stone-100">
-    <div class="max-w-3xl mx-auto text-center fade-in">
-      <div class="quote-mark mb-4">"</div>
-      <blockquote class="font-sans text-2xl md:text-3xl text-stone-700 italic font-300 leading-relaxed -mt-8" data-i18n="quote.text">
-        C'est en jouant, et seulement en jouant, que l'individu, enfant ou adulte, est capable d'être créatif.
-      </blockquote>
-      <p class="text-stone-500 text-sm mt-6 tracking-wide" data-i18n="quote.author">— D. W. Winnicott, Jeu et réalité</p>
-    </div>
-  </section>
-
-  <!-- Approach -->
-  <section id="approach" class="py-20 md:py-28 px-6 bg-white">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16 fade-in">
-        <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium" data-i18n="approach.eyebrow">Approche</p>
-        <h2 class="font-serif text-4xl md:text-5xl font-300 text-stone-900" data-i18n="approach.heading">Une thérapie psychanalytique contemporaine</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 fade-in stagger-1 hover:shadow-lg transition-shadow duration-500">
-          <div class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center mb-6">
-            <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-          </div>
-          <h3 class="font-serif text-xl text-stone-800 mb-3 font-600" data-i18n="card1.title">La parole au centre</h3>
-          <p class="text-stone-600 leading-relaxed font-light" data-i18n="card1.desc">
-            La psychanalyse repose sur la parole libre. Dans un cadre régulier et sécurisant,
-            vous êtes invité·e à dire ce qui vient, sans jugement ni censure.
-          </p>
-        </div>
-        <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 fade-in stagger-2 hover:shadow-lg transition-shadow duration-500">
-          <div class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center mb-6">
-            <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-          </div>
-          <h3 class="font-serif text-xl text-stone-800 mb-3 font-600" data-i18n="card2.title">Adultes & adolescents</h3>
-          <p class="text-stone-600 leading-relaxed font-light" data-i18n="card2.desc">
-            J'accompagne les adultes et les adolescents, en adaptant mon écoute à chaque étape de vie —
-            des questionnements existentiels de l'âge adulte aux crises propres à l'adolescence.
-          </p>
-        </div>
-        <div class="p-8 rounded-2xl bg-stone-50 border border-stone-100 fade-in stagger-3 hover:shadow-lg transition-shadow duration-500">
-          <div class="w-10 h-10 rounded-full bg-stone-200 flex items-center justify-center mb-6">
-            <svg class="w-5 h-5 text-stone-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-serif text-xl text-stone-800 mb-3 font-600" data-i18n="card3.title">Consultations en ligne</h3>
-          <p class="text-stone-600 leading-relaxed font-light" data-i18n="card3.desc">
-            Je propose actuellement mes séances exclusivement en visioconférence, pour permettre à chacun
-            d'accéder à une thérapie quel que soit son emplacement.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
+  <!-- Parcours -->
   <section id="experience" class="py-20 md:py-28 px-6 bg-stone-50">
-    <div class="max-w-4xl mx-auto">
-      <div class="mb-16 fade-in">
-        <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium" data-i18n="experience.eyebrow">Parcours</p>
-        <h2 class="font-serif text-4xl md:text-5xl font-300 text-stone-900" data-i18n="experience.heading">Expérience clinique</h2>
+    <div class="max-w-3xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="text-stone-400 eyebrow mb-5" data-i18n="experience.eyebrow">Parcours</p>
+        <p class="text-lg text-stone-700" data-i18n="experience.intro">
+          Mon expérience s'est nourrie de différentes formes de souffrance dans la relation humaine :
+          les services sociaux, la pédopsychiatrie, et aujourd'hui les suivis individuels.
+        </p>
       </div>
-      <div class="space-y-10">
-        <div class="flex flex-col md:flex-row gap-6 md:gap-10 fade-in stagger-1">
+      <div class="space-y-9">
+        <div class="flex flex-col md:flex-row gap-4 md:gap-10 fade-in stagger-1">
           <div class="md:w-40 flex-shrink-0">
-            <p class="text-stone-400 text-sm font-medium" data-i18n="exp1.dates">2025 — Présent</p>
+            <p class="text-stone-400 text-sm" data-i18n="exp1.dates">2025 — Présent</p>
           </div>
           <div>
-            <h3 class="font-serif text-xl text-stone-800 font-600 mb-1" data-i18n="exp1.title">Psychologue clinicienne</h3>
+            <h3 class="text-stone-800 mb-1" data-i18n="exp1.title">Psychologue clinicienne</h3>
             <p class="text-stone-500 text-sm mb-3" data-i18n="exp1.domain">Pédopsychiatrie — Paris & Poissy</p>
-            <p class="text-stone-600 leading-relaxed font-light" data-i18n="exp1.desc">
+            <p class="text-stone-600" data-i18n="exp1.desc">
               Accompagnement thérapeutique d'enfants et d'adolescents en pédopsychiatrie.
               Entretiens individuels, évaluations cliniques, et participation aux réunions pluridisciplinaires.
             </p>
           </div>
         </div>
         <div class="border-t border-stone-200"></div>
-        <div class="flex flex-col md:flex-row gap-6 md:gap-10 fade-in stagger-2">
+        <div class="flex flex-col md:flex-row gap-4 md:gap-10 fade-in stagger-2">
           <div class="md:w-40 flex-shrink-0">
-            <p class="text-stone-400 text-sm font-medium" data-i18n="exp2.dates">2023 — Présent</p>
+            <p class="text-stone-400 text-sm" data-i18n="exp2.dates">2023 — Présent</p>
           </div>
           <div>
-            <h3 class="font-serif text-xl text-stone-800 font-600 mb-1" data-i18n="exp2.title">Thérapeute</h3>
+            <h3 class="text-stone-800 mb-1" data-i18n="exp2.title">Thérapeute</h3>
             <p class="text-stone-500 text-sm mb-3">İnka Psikoloji (Turquie & France)</p>
-            <p class="text-stone-600 leading-relaxed font-light" data-i18n="exp2.desc">
-              Psychothérapie psychanalytique en ligne pour adultes turcophones. Accompagnement des souffrances
+            <p class="text-stone-600" data-i18n="exp2.desc">
+              Psychothérapie psychodynamique en ligne pour adultes turcophones. Accompagnement des souffrances
               liées à l'anxiété, la dépression, et les questions identitaires.
             </p>
           </div>
         </div>
         <div class="border-t border-stone-200"></div>
-        <div class="flex flex-col md:flex-row gap-6 md:gap-10 fade-in stagger-3">
+        <div class="flex flex-col md:flex-row gap-4 md:gap-10 fade-in stagger-3">
           <div class="md:w-40 flex-shrink-0">
-            <p class="text-stone-400 text-sm font-medium">2024 — 2025</p>
+            <p class="text-stone-400 text-sm">2024 — 2025</p>
           </div>
           <div>
-            <h3 class="font-serif text-xl text-stone-800 font-600 mb-1" data-i18n="exp3.title">Psychologue clinicienne</h3>
+            <h3 class="text-stone-800 mb-1" data-i18n="exp3.title">Psychologue clinicienne</h3>
             <p class="text-stone-500 text-sm mb-3" data-i18n="exp3.domain">Services sociaux — Paris</p>
-            <p class="text-stone-600 leading-relaxed font-light" data-i18n="exp3.desc">
+            <p class="text-stone-600" data-i18n="exp3.desc">
               Accompagnement psychologique de mineurs et de familles en difficulté, dans le cadre des
               services sociaux et de la protection de l'enfance.
             </p>
@@ -318,20 +306,31 @@
 
   <!-- Publications -->
   <section id="publications" class="py-20 md:py-28 px-6 bg-white">
-    <div class="max-w-4xl mx-auto">
-      <div class="mb-16 fade-in">
-        <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium" data-i18n="publications.eyebrow">Publications</p>
-        <h2 class="font-serif text-4xl md:text-5xl font-300 text-stone-900" data-i18n="publications.heading">Écrits & traductions</h2>
-        <p class="text-stone-600 mt-4 font-light text-lg max-w-2xl" data-i18n="publications.intro">
+    <div class="max-w-3xl mx-auto">
+      <div class="mb-12 fade-in">
+        <p class="text-stone-400 eyebrow mb-5" data-i18n="publications.eyebrow">Publications</p>
+        <p class="text-lg text-stone-700" data-i18n="publications.intro">
           Contribuer à la diffusion de la pensée psychanalytique, en français et en turc.
         </p>
       </div>
-      <div class="space-y-6">
+      <div class="space-y-5">
+        <a href="https://www.ontodergisi.com/sayilar/psikanalizde-narsistik-cozumleme" target="_blank"
+           class="block p-6 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 hover:shadow-md transition-all duration-300 fade-in stagger-1 group">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="text-stone-800 group-hover:text-stone-900 mb-2 leading-snug" data-i18n="pub4.title">
+                L'analyse du narcissisme en psychanalyse
+              </h3>
+              <p class="text-stone-500 text-sm" data-i18n="pub4.sub">Titre original (turc) : « Psikanalizde Narsistik Çözümleme » — Onto Dergisi, 2024</p>
+            </div>
+            <svg class="w-5 h-5 text-stone-400 group-hover:text-stone-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </div>
+        </a>
         <a href="https://psikolektif.com/etiket/zeynepbuyukkeser/" target="_blank"
            class="block p-6 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 hover:shadow-md transition-all duration-300 fade-in stagger-1 group">
           <div class="flex items-start justify-between gap-4">
             <div>
-              <h3 class="font-serif text-lg text-stone-800 font-600 group-hover:text-stone-900 mb-2" data-i18n="pub1.title">
+              <h3 class="text-stone-800 group-hover:text-stone-900 mb-2 leading-snug" data-i18n="pub1.title">
                 Melanie Klein : sa vie et son œuvre
               </h3>
               <p class="text-stone-500 text-sm" data-i18n="pub1.sub">Titre original (turc) : « Melanie Klein: Hayatı ve Çalışmaları » — Psikolektif</p>
@@ -343,7 +342,7 @@
            class="block p-6 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 hover:shadow-md transition-all duration-300 fade-in stagger-2 group">
           <div class="flex items-start justify-between gap-4">
             <div>
-              <h3 class="font-serif text-lg text-stone-800 font-600 group-hover:text-stone-900 mb-2" data-i18n="pub2.title">
+              <h3 class="text-stone-800 group-hover:text-stone-900 mb-2 leading-snug" data-i18n="pub2.title">
                 S'unir pour se retrouver : les liens familiaux à l'adolescence
               </h3>
               <p class="text-stone-500 text-sm" data-i18n="pub2.sub">Titre original (turc) : « Tekrar Bir Araya Gelebilmek için Birleşmek » — Psikolektif Dergisi, n°21</p>
@@ -355,7 +354,7 @@
            class="block p-6 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 hover:shadow-md transition-all duration-300 fade-in stagger-3 group">
           <div class="flex items-start justify-between gap-4">
             <div>
-              <h3 class="font-serif text-lg text-stone-800 font-600 group-hover:text-stone-900 mb-2" data-i18n="pub3.title">
+              <h3 class="text-stone-800 group-hover:text-stone-900 mb-2 leading-snug" data-i18n="pub3.title">
                 Des blessures émotionnelles aux sensations corporelles : un voyage à travers la dépendance
               </h3>
               <p class="text-stone-500 text-sm" data-i18n="pub3.sub">Titre original (turc) : « Duygusal Yaralardan Bedensel Duyumlara Bir Yolculuk: Bağımlılık » — Psikolektif</p>
@@ -364,16 +363,20 @@
           </div>
         </a>
       </div>
-      <div class="mt-8 p-6 rounded-xl bg-warm-50 border border-warm-200 fade-in stagger-4">
+      <div class="mt-6 p-6 rounded-xl bg-warm-50 border border-warm-200 fade-in stagger-4">
         <div class="flex items-start gap-4">
           <div class="w-10 h-10 rounded-full bg-warm-200 flex items-center justify-center flex-shrink-0">
             <svg class="w-5 h-5 text-warm-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5h12M9 3v2m0 16v2m9-8h6m-3-3v6M5 12a2 2 0 110-4 2 2 0 010 4zm0 0v8m0-8l6-2m-6 2l6 2"/></svg>
           </div>
-          <div>
-            <h4 class="font-serif text-lg text-stone-800 font-600 mb-2" data-i18n="translation.title">Traduction</h4>
-            <p class="text-stone-600 leading-relaxed font-light" data-i18n-html="translation.desc">
+          <div class="space-y-3">
+            <h3 class="text-stone-800" data-i18n="translation.title">Traductions</h3>
+            <p class="text-stone-600" data-i18n-html="translation.desc">
               Traduction du séminaire <em>« Oyun ve Simgeleştirme »</em> (Jeu et Symbolisation) du psychanalyste
               <strong>René Roussillon</strong>, organisé par Psike İstanbul.
+            </p>
+            <p class="text-stone-600" data-i18n-html="translation.desc2">
+              Traduction d'un article pour le dossier <em>« Bağımlılıklar – 1 »</em> (Les dépendances – 1) de la revue
+              <a href="https://www.simurgkitabevi.com/yansitma-psikopatoloji-ve-projektif-testler-dergisi-bagimliliklar-1-sayi-35-temmuz-2021" target="_blank" class="underline decoration-warm-400 underline-offset-2 hover:text-stone-900"><strong>Yansıtma — Psikopatoloji ve Projektif Testler</strong></a>, n° 35, juillet 2021.
             </p>
           </div>
         </div>
@@ -384,40 +387,49 @@
   <!-- Contact -->
   <section id="contact" class="py-20 md:py-28 px-6 bg-stone-800 text-stone-100">
     <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-16">
+      <div class="grid md:grid-cols-2 gap-14">
         <div class="fade-in">
-          <p class="text-stone-400 text-sm tracking-widest uppercase mb-3 font-medium" data-i18n="contact.eyebrow">Contact</p>
-          <h2 class="font-serif text-4xl md:text-5xl font-300 text-white mb-6" data-i18n="contact.heading">Prendre rendez-vous</h2>
-          <p class="text-stone-300 leading-relaxed font-light text-lg mb-10" data-i18n="contact.intro">
+          <p class="text-stone-400 eyebrow mb-5" data-i18n="contact.eyebrow">Contact</p>
+          <h2 class="text-2xl md:text-3xl text-white mb-7" data-i18n="contact.heading">Prendre rendez-vous</h2>
+          <p class="text-stone-300 mb-10" data-i18n="contact.intro">
             La première étape est souvent la plus difficile. Je vous invite à me contacter pour un premier
             entretien clinique, qui me permettra de mieux comprendre votre demande. Comme les séances
             suivantes, ce premier entretien n'est pas gratuit.
           </p>
           <div class="space-y-6">
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center">
+              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center flex-shrink-0">
                 <svg class="w-5 h-5 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
               </div>
               <div>
-                <p class="text-white font-medium">Paris, Île-de-France</p>
+                <p class="text-white text-sm">Paris, Île-de-France</p>
                 <p class="text-stone-400 text-sm" data-i18n="contact.locationDesc">Séances actuellement proposées en ligne uniquement</p>
               </div>
             </div>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center">
+              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18 15 15 0 010-18z"/></svg>
+              </div>
+              <div>
+                <p class="text-white text-sm">Français · English · Türkçe</p>
+                <p class="text-stone-400 text-sm" data-i18n="contact.langsDesc">Séances dans l'une de ces trois langues</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center flex-shrink-0">
                 <svg class="w-5 h-5 text-stone-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               </div>
               <div>
-                <p class="text-white font-medium">psyzeynepbuyukkeser@gmail.com</p>
+                <p class="text-white text-sm break-all">psyzeynepbuyukkeser@gmail.com</p>
                 <p class="text-stone-400 text-sm" data-i18n="contact.emailDesc">Réponse sous 48h</p>
               </div>
             </div>
             <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center">
+              <div class="w-10 h-10 rounded-full bg-stone-700 flex items-center justify-center flex-shrink-0">
                 <svg class="w-5 h-5 text-stone-300" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               </div>
               <div>
-                <a href="https://www.linkedin.com/in/zeynepbuyukkeser" target="_blank" class="text-white font-medium hover:text-stone-300 transition-colors">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/zeynepbuyukkeser" target="_blank" class="text-white text-sm hover:text-stone-300 transition-colors">LinkedIn</a>
                 <p class="text-stone-400 text-sm" data-i18n="contact.linkedinDesc">Suivez mon actualité professionnelle</p>
               </div>
             </div>
@@ -427,15 +439,15 @@
           <form class="space-y-5" onsubmit="handleSubmit(event)">
             <div>
               <label class="block text-stone-400 text-sm mb-2" data-i18n="form.name">Nom</label>
-              <input type="text" required class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:outline-none focus:border-stone-400 transition-colors" data-i18n-placeholder="form.namePlaceholder" placeholder="Votre nom">
+              <input type="text" required class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white text-sm placeholder-stone-400 focus:outline-none focus:border-stone-400 transition-colors" style="font-family: inherit" data-i18n-placeholder="form.namePlaceholder" placeholder="Votre nom">
             </div>
             <div>
               <label class="block text-stone-400 text-sm mb-2" data-i18n="form.email">Email</label>
-              <input type="email" required class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:outline-none focus:border-stone-400 transition-colors" data-i18n-placeholder="form.emailPlaceholder" placeholder="votre@email.com">
+              <input type="email" required class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white text-sm placeholder-stone-400 focus:outline-none focus:border-stone-400 transition-colors" style="font-family: inherit" data-i18n-placeholder="form.emailPlaceholder" placeholder="votre@email.com">
             </div>
             <div>
               <label class="block text-stone-400 text-sm mb-2" data-i18n="form.subject">Sujet</label>
-              <select class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white focus:outline-none focus:border-stone-400 transition-colors">
+              <select class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white text-sm focus:outline-none focus:border-stone-400 transition-colors" style="font-family: inherit">
                 <option data-i18n="form.subject1">Demande de rendez-vous</option>
                 <option data-i18n="form.subject2">Question sur la thérapie</option>
                 <option data-i18n="form.subject3">Collaboration professionnelle</option>
@@ -444,9 +456,9 @@
             </div>
             <div>
               <label class="block text-stone-400 text-sm mb-2" data-i18n="form.message">Message</label>
-              <textarea rows="4" required class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white placeholder-stone-400 focus:outline-none focus:border-stone-400 transition-colors resize-none" data-i18n-placeholder="form.messagePlaceholder" placeholder="Décrivez brièvement votre demande..."></textarea>
+              <textarea rows="4" required class="w-full px-4 py-3 bg-stone-700 border border-stone-600 rounded-lg text-white text-sm placeholder-stone-400 focus:outline-none focus:border-stone-400 transition-colors resize-none" style="font-family: inherit" data-i18n-placeholder="form.messagePlaceholder" placeholder="Décrivez brièvement votre demande..."></textarea>
             </div>
-            <button type="submit" class="w-full py-3.5 bg-stone-100 text-stone-800 font-medium rounded-lg hover:bg-white transition-colors" data-i18n="form.send">
+            <button type="submit" class="w-full py-3.5 bg-stone-100 text-stone-800 text-sm rounded-lg hover:bg-white transition-colors" style="font-family: inherit" data-i18n="form.send">
               Envoyer
             </button>
             <p class="text-stone-500 text-xs text-center" data-i18n="form.note">
@@ -460,13 +472,13 @@
 
   <!-- Footer -->
   <footer class="py-10 px-6 bg-stone-900 text-stone-500 border-t border-stone-800">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
       <div class="flex items-center gap-2">
-        <span class="font-serif text-lg text-stone-300">Z. Büyükkeser</span>
+        <span class="text-stone-300">Z. Büyükkeser</span>
         <span class="text-stone-600">·</span>
-        <span class="text-sm" data-i18n="footer.role">Psychologue clinicienne</span>
+        <span data-i18n="footer.role">Psychologue clinicienne et psychothérapeute</span>
       </div>
-      <div class="flex items-center gap-6 text-sm">
+      <div class="flex items-center gap-6">
         <a href="https://www.linkedin.com/in/zeynepbuyukkeser" target="_blank" class="hover:text-stone-300 transition-colors">LinkedIn</a>
         <a href="https://psikolektif.com/author/zeynep-buyukkeser/" target="_blank" class="hover:text-stone-300 transition-colors">Psikolektif</a>
         <a href="#contact" class="hover:text-stone-300 transition-colors" data-i18n="nav.contact">Contact</a>
@@ -485,45 +497,40 @@
         'nav.publications': 'Publications',
         'nav.contact': 'Contact',
         'nav.cta': 'Prendre rendez-vous',
-        pageTitle: 'Zeynep Büyükkeser — Psychologue Clinicienne | Psychothérapie psychanalytique',
-        'hero.eyebrow': 'Psychologue Clinicienne — Paris',
-        'hero.desc': "Psychothérapie psychanalytique pour adultes et adolescents. Un espace de parole pour explorer ce qui fait souffrance et trouver un chemin vers soi.",
+        pageTitle: 'Zeynep Büyükkeser — Psychologue clinicienne et psychothérapeute',
+        'hero.eyebrow': 'Psychologue clinicienne et psychothérapeute',
+        'hero.desc': 'Psychothérapie psychodynamique pour adultes et adolescents.',
+        'hero.langs': 'Séances en français, en anglais et en turc.',
         'hero.cta1': 'Prendre rendez-vous',
         'hero.cta2': 'Découvrir mon approche',
         'hero.imgAlt': 'Zeynep Büyükkeser, psychologue clinicienne',
+        'approach.eyebrow': 'Approche',
+        'approach.p1': "Des douleurs physiques, des sensations désagréables, de l'angoisse, beaucoup de stress : ce sont des symptômes, et un symptôme dit toujours quelque chose d'une souffrance.",
+        'approach.p2': "La psychothérapie propose de regarder de plus près cette souffrance qui se manifeste en vous. Ensemble, nous cherchons à donner du sens au symptôme, à entendre ce qu'il tente de dire.",
+        'approach.p3': "Ce travail ouvre sur la découverte de votre monde intérieur et sur la capacité de regarder en soi — ce qu'on appelle l'introspection.",
+        'quote.text': "C'est en jouant, et seulement en jouant, que l'individu, enfant ou adulte, est capable d'être créatif.",
+        'quote.author': '— D. W. Winnicott, Jeu et réalité',
         'about.eyebrow': 'À propos',
-        'about.heading': "Une présence à l'écoute de votre singularité",
-        'about.p1': "Après avoir obtenu mon Master 2 en Psychologie Clinique Psychanalytique à l'Université Lumière Lyon 2, j'exerce aujourd'hui en tant que psychologue clinicienne à Paris, auprès d'adultes et d'adolescents.",
-        'about.p2': "Formée dans la tradition psychanalytique, je propose un espace thérapeutique où chaque personne peut venir avec ses mots, ses silences, sa souffrance — pour lentement se reconstruire.",
-        'about.p3': "Mon parcours m'a conduite de Lyon à Paris, avec des expériences en pédopsychiatrie, dans les services sociaux, ainsi qu'auprès de personnes âgées et d'adolescents en souffrance psychique.",
-        'about.p4': "Je poursuis aujourd'hui mon travail clinique en pédopsychiatrie et en services sociaux, tout en développant ma pratique de psychothérapie psychanalytique pour adultes et adolescents, actuellement proposée en ligne uniquement.",
+        'about.heading': "Un regard pluriel : l'existence, le corps, l'inconscient",
+        'about.p1': "J'ai obtenu mon Master 2 de Psychologie Clinique Psychanalytique à l'Université Lumière Lyon 2. J'exerce aujourd'hui comme psychologue clinicienne auprès d'adultes et d'adolescents.",
+        'about.p2': "Formée dans la tradition psychanalytique, j'ai peu à peu intégré d'autres courants à ma pratique : la thérapie existentielle, qui prend au sérieux la condition de l'humain moderne — la solitude, l'isolement, l'absence de sens, l'angoisse de mort ; le travail sur le corps et le système nerveux, à travers les formations que j'ai suivies ; la pleine conscience et la méditation, une manière de relier le corps et l'esprit.",
+        'about.p3': "Il s'agit de découvrir votre monde intérieur dans sa singularité et sa subjectivité : comprendre comment vous vous représentez le monde, les relations, votre rapport à la souffrance. Ensemble, nous cherchons à donner du sens — et parfois à déconstruire ce qui demande à l'être.",
         'stat1.label': "Années d'expérience",
         'stat2.label': 'Psychologie Clinique Psychanalytique',
         'stat3.label': 'Consultations en ligne (pour le moment)',
-        'quote.text': "C'est en jouant, et seulement en jouant, que l'individu, enfant ou adulte, est capable d'être créatif.",
-        'quote.author': '— D. W. Winnicott, Jeu et réalité',
-        'approach.eyebrow': 'Approche',
-        'approach.heading': 'Une thérapie psychanalytique contemporaine',
-        'card1.title': 'La parole au centre',
-        'card1.desc': "La psychanalyse repose sur la parole libre. Dans un cadre régulier et sécurisant, vous êtes invité·e à dire ce qui vient, sans jugement ni censure.",
-        'card2.title': 'Adultes & adolescents',
-        'card2.desc': "J'accompagne les adultes et les adolescents, en adaptant mon écoute à chaque étape de vie — des questionnements existentiels de l'âge adulte aux crises propres à l'adolescence.",
-        'card3.title': 'Consultations en ligne',
-        'card3.desc': "Je propose actuellement mes séances exclusivement en visioconférence, pour permettre à chacun d'accéder à une thérapie quel que soit son emplacement.",
         'experience.eyebrow': 'Parcours',
-        'experience.heading': 'Expérience clinique',
+        'experience.intro': "Mon expérience s'est nourrie de différentes formes de souffrance dans la relation humaine : les services sociaux, la pédopsychiatrie, et aujourd'hui les suivis individuels.",
         'exp1.dates': '2025 — Présent',
         'exp1.title': 'Psychologue clinicienne',
         'exp1.domain': 'Pédopsychiatrie — Paris & Poissy',
         'exp1.desc': "Accompagnement thérapeutique d'enfants et d'adolescents en pédopsychiatrie. Entretiens individuels, évaluations cliniques, et participation aux réunions pluridisciplinaires.",
         'exp2.dates': '2023 — Présent',
         'exp2.title': 'Thérapeute',
-        'exp2.desc': "Psychothérapie psychanalytique en ligne pour adultes turcophones. Accompagnement des souffrances liées à l'anxiété, la dépression, et les questions identitaires.",
+        'exp2.desc': "Psychothérapie psychodynamique en ligne pour adultes turcophones. Accompagnement des souffrances liées à l'anxiété, la dépression, et les questions identitaires.",
         'exp3.title': 'Psychologue clinicienne',
         'exp3.domain': 'Services sociaux — Paris',
         'exp3.desc': "Accompagnement psychologique de mineurs et de familles en difficulté, dans le cadre des services sociaux et de la protection de l'enfance.",
         'publications.eyebrow': 'Publications',
-        'publications.heading': 'Écrits & traductions',
         'publications.intro': 'Contribuer à la diffusion de la pensée psychanalytique, en français et en turc.',
         'pub1.title': 'Melanie Klein : sa vie et son œuvre',
         'pub1.sub': 'Titre original (turc) : « Melanie Klein: Hayatı ve Çalışmaları » — Psikolektif',
@@ -531,12 +538,16 @@
         'pub2.sub': 'Titre original (turc) : « Tekrar Bir Araya Gelebilmek için Birleşmek » — Psikolektif Dergisi, n°21',
         'pub3.title': 'Des blessures émotionnelles aux sensations corporelles : un voyage à travers la dépendance',
         'pub3.sub': 'Titre original (turc) : « Duygusal Yaralardan Bedensel Duyumlara Bir Yolculuk: Bağımlılık » — Psikolektif',
-        'translation.title': 'Traduction',
+        'pub4.title': "L'analyse du narcissisme en psychanalyse",
+        'pub4.sub': 'Titre original (turc) : « Psikanalizde Narsistik Çözümleme » — Onto Dergisi, 2024',
+        'translation.title': 'Traductions',
         'translation.desc': 'Traduction du séminaire <em>« Oyun ve Simgeleştirme »</em> (Jeu et Symbolisation) du psychanalyste <strong>René Roussillon</strong>, organisé par Psike İstanbul.',
+        'translation.desc2': 'Traduction d\'un article pour le dossier <em>« Bağımlılıklar – 1 »</em> (Les dépendances – 1) de la revue <a href="https://www.simurgkitabevi.com/yansitma-psikopatoloji-ve-projektif-testler-dergisi-bagimliliklar-1-sayi-35-temmuz-2021" target="_blank" class="underline decoration-warm-400 underline-offset-2 hover:text-stone-900"><strong>Yansıtma — Psikopatoloji ve Projektif Testler</strong></a>, n° 35, juillet 2021.',
         'contact.eyebrow': 'Contact',
         'contact.heading': 'Prendre rendez-vous',
         'contact.intro': "La première étape est souvent la plus difficile. Je vous invite à me contacter pour un premier entretien clinique, qui me permettra de mieux comprendre votre demande. Comme les séances suivantes, ce premier entretien n'est pas gratuit.",
         'contact.locationDesc': 'Séances actuellement proposées en ligne uniquement',
+        'contact.langsDesc': "Séances dans l'une de ces trois langues",
         'contact.emailDesc': 'Réponse sous 48h',
         'contact.linkedinDesc': 'Suivez mon actualité professionnelle',
         'form.name': 'Nom',
@@ -553,7 +564,7 @@
         'form.send': 'Envoyer',
         'form.note': 'Les informations sont confidentielles et ne seront pas partagées.',
         'form.alert': 'Merci pour votre message. Je vous recontacterai sous peu.',
-        'footer.role': 'Psychologue clinicienne',
+        'footer.role': 'Psychologue clinicienne et psychothérapeute',
         'footer.adeli': 'Numéro ADELI sur demande',
       },
       en: {
@@ -563,45 +574,40 @@
         'nav.publications': 'Publications',
         'nav.contact': 'Contact',
         'nav.cta': 'Book a consultation',
-        pageTitle: 'Zeynep Büyükkeser — Clinical Psychologist | Psychoanalytic Psychotherapy',
-        'hero.eyebrow': 'Clinical Psychologist — Paris',
-        'hero.desc': "Psychoanalytic psychotherapy for adults and adolescents. A space for speech to explore what causes suffering and find a way back to oneself.",
+        pageTitle: 'Zeynep Büyükkeser — Clinical Psychologist & Psychotherapist',
+        'hero.eyebrow': 'Clinical psychologist and psychotherapist',
+        'hero.desc': 'Psychodynamic psychotherapy for adults and adolescents.',
+        'hero.langs': 'Sessions in French, English and Turkish.',
         'hero.cta1': 'Book a consultation',
         'hero.cta2': 'Discover my approach',
         'hero.imgAlt': 'Zeynep Büyükkeser, clinical psychologist',
+        'approach.eyebrow': 'Approach',
+        'approach.p1': 'Physical pain, unpleasant sensations, anxiety, a great deal of stress: these are symptoms, and a symptom always says something about suffering.',
+        'approach.p2': 'Psychotherapy offers a closer look at the suffering that shows itself in you. Together, we seek to give the symptom meaning, to hear what it is trying to say.',
+        'approach.p3': 'This work opens onto the discovery of your inner world and the capacity to look within — what we call introspection.',
+        'quote.text': 'It is in playing, and only in playing, that the individual, child or adult, is able to be creative.',
+        'quote.author': '— D. W. Winnicott, Playing and Reality',
         'about.eyebrow': 'About',
-        'about.heading': 'A presence attentive to your singularity',
-        'about.p1': "After earning my Master's degree in Clinical Psychoanalytic Psychology from Université Lumière Lyon 2, I now work as a clinical psychologist in Paris, with adults and adolescents.",
-        'about.p2': "Trained in the psychoanalytic tradition, I offer a therapeutic space where each person can come with their own words, silences and suffering — to slowly rebuild themselves.",
-        'about.p3': "My path has taken me from Lyon to Paris, with experience in child and adolescent psychiatry and in social services, as well as with elderly patients and adolescents facing psychological distress.",
-        'about.p4': "Today I continue my clinical work in child and adolescent psychiatry and social services, while developing my psychoanalytic psychotherapy practice for adults and adolescents, currently offered online only.",
+        'about.heading': 'A plural gaze: existence, the body, the unconscious',
+        'about.p1': "I hold a Master's degree in Clinical Psychoanalytic Psychology from Université Lumière Lyon 2. I now practise as a clinical psychologist with adults and adolescents.",
+        'about.p2': 'Trained in the psychoanalytic tradition, I have gradually brought other currents into my practice: existential therapy, which takes seriously the condition of the modern human — loneliness, isolation, the absence of meaning, the anxiety of death; work on the body and the nervous system, through the trainings I have followed; and mindfulness and meditation, a way of linking body and mind.',
+        'about.p3': 'The aim is to discover your inner world in its singularity and subjectivity: to understand how you represent the world, relationships, your relation to suffering. Together we seek to give meaning — and sometimes to take apart what asks to be taken apart.',
         'stat1.label': 'Years of experience',
         'stat2.label': 'Clinical Psychoanalytic Psychology',
         'stat3.label': 'Online consultations (for now)',
-        'quote.text': "It is in playing, and only in playing, that the individual, child or adult, is able to be creative.",
-        'quote.author': '— D. W. Winnicott, Playing and Reality',
-        'approach.eyebrow': 'Approach',
-        'approach.heading': 'A contemporary psychoanalytic therapy',
-        'card1.title': 'Speech at the centre',
-        'card1.desc': "Psychoanalysis rests on free speech. Within a regular, secure setting, you are invited to say whatever comes to mind, without judgment or censorship.",
-        'card2.title': 'Adults & adolescents',
-        'card2.desc': "I work with adults and adolescents, adapting my listening to each stage of life — from the existential questions of adulthood to the crises specific to adolescence.",
-        'card3.title': 'Online consultations',
-        'card3.desc': "I currently offer my sessions exclusively via videoconference, allowing everyone to access therapy regardless of location.",
         'experience.eyebrow': 'Experience',
-        'experience.heading': 'Clinical experience',
+        'experience.intro': 'My experience has been shaped by different forms of suffering within human relationships: social services, child and adolescent psychiatry, and today individual psychotherapy.',
         'exp1.dates': '2025 — Present',
         'exp1.title': 'Clinical Psychologist',
         'exp1.domain': 'Child & Adolescent Psychiatry — Paris & Poissy area',
-        'exp1.desc': "Therapeutic support for children and adolescents in child and adolescent psychiatry. Individual sessions, clinical assessments, and participation in multidisciplinary meetings.",
+        'exp1.desc': 'Therapeutic support for children and adolescents in child and adolescent psychiatry. Individual sessions, clinical assessments, and participation in multidisciplinary meetings.',
         'exp2.dates': '2023 — Present',
         'exp2.title': 'Therapist',
-        'exp2.desc': "Online psychoanalytic psychotherapy for Turkish-speaking adults. Support for difficulties related to anxiety, depression, and questions of identity.",
+        'exp2.desc': 'Online psychodynamic psychotherapy for Turkish-speaking adults. Support for difficulties related to anxiety, depression, and questions of identity.',
         'exp3.title': 'Clinical Psychologist',
         'exp3.domain': 'Social Services — Paris',
-        'exp3.desc': "Psychological support for minors and families in difficulty, within the framework of social services and child protection.",
+        'exp3.desc': 'Psychological support for minors and families in difficulty, within the framework of social services and child protection.',
         'publications.eyebrow': 'Publications',
-        'publications.heading': 'Writings & translations',
         'publications.intro': 'Contributing to the spread of psychoanalytic thought, in French and Turkish.',
         'pub1.title': 'Melanie Klein: Her Life and Work',
         'pub1.sub': 'Original title (Turkish): "Melanie Klein: Hayatı ve Çalışmaları" — Psikolektif',
@@ -609,12 +615,16 @@
         'pub2.sub': 'Original title (Turkish): "Tekrar Bir Araya Gelebilmek için Birleşmek" — Psikolektif Dergisi, issue 21',
         'pub3.title': 'From Emotional Wounds to Bodily Sensations: A Journey Through Addiction',
         'pub3.sub': 'Original title (Turkish): "Duygusal Yaralardan Bedensel Duyumlara Bir Yolculuk: Bağımlılık" — Psikolektif',
-        'translation.title': 'Translation',
+        'pub4.title': 'The Analysis of Narcissism in Psychoanalysis',
+        'pub4.sub': 'Original title (Turkish): "Psikanalizde Narsistik Çözümleme" — Onto Dergisi, 2024',
+        'translation.title': 'Translations',
         'translation.desc': 'Translation of the seminar <em>"Oyun ve Simgeleştirme"</em> (Play and Symbolization) by psychoanalyst <strong>René Roussillon</strong>, organized by Psike İstanbul.',
+        'translation.desc2': 'Translation of an article for the <em>"Bağımlılıklar – 1"</em> (Addictions – 1) issue of <a href="https://www.simurgkitabevi.com/yansitma-psikopatoloji-ve-projektif-testler-dergisi-bagimliliklar-1-sayi-35-temmuz-2021" target="_blank" class="underline decoration-warm-400 underline-offset-2 hover:text-stone-900"><strong>Yansıtma — Journal of Psychopathology and Projective Tests</strong></a>, no. 35, July 2021.',
         'contact.eyebrow': 'Contact',
         'contact.heading': 'Book a consultation',
-        'contact.intro': "Taking the first step is often the hardest part. I invite you to get in touch for an initial clinical consultation, which will help me better understand your needs. Like the sessions that follow, this first consultation is not free of charge.",
+        'contact.intro': 'Taking the first step is often the hardest part. I invite you to get in touch for an initial clinical consultation, which will help me better understand your needs. Like the sessions that follow, this first consultation is not free of charge.',
         'contact.locationDesc': 'Sessions currently offered online only',
+        'contact.langsDesc': 'Sessions in any of these three languages',
         'contact.emailDesc': 'Response within 48 hours',
         'contact.linkedinDesc': 'Follow my professional updates',
         'form.name': 'Name',
@@ -631,8 +641,85 @@
         'form.send': 'Send',
         'form.note': 'Your information is confidential and will not be shared.',
         'form.alert': 'Thank you for your message. I will get back to you shortly.',
-        'footer.role': 'Clinical Psychologist',
+        'footer.role': 'Clinical psychologist and psychotherapist',
         'footer.adeli': 'ADELI number available upon request',
+      },
+      tr: {
+        'nav.about': 'Hakkımda',
+        'nav.approach': 'Yaklaşım',
+        'nav.experience': 'Deneyim',
+        'nav.publications': 'Yayınlar',
+        'nav.contact': 'İletişim',
+        'nav.cta': 'Randevu al',
+        pageTitle: 'Zeynep Büyükkeser — Klinik Psikolog ve Psikoterapist',
+        'hero.eyebrow': 'Klinik psikolog ve psikoterapist',
+        'hero.desc': 'Yetişkinler ve ergenler için psikodinamik psikoterapi.',
+        'hero.langs': 'Seanslar Fransızca, İngilizce ve Türkçe.',
+        'hero.cta1': 'Randevu al',
+        'hero.cta2': 'Yaklaşımımı keşfedin',
+        'hero.imgAlt': 'Zeynep Büyükkeser, klinik psikolog',
+        'approach.eyebrow': 'Yaklaşım',
+        'approach.p1': 'Bedensel ağrılar, tatsız duyumlar, kaygı, yoğun stres: bunların hepsi birer semptomdur — ve semptom her zaman bir acıya dair bir şey söyler.',
+        'approach.p2': 'Psikoterapi, sizde kendini gösteren bu acıya daha yakından bakmayı önerir. Birlikte semptoma anlam vermeye, onun söylemeye çalıştığı şeyi duymaya çalışırız.',
+        'approach.p3': 'Bu çalışma, iç dünyanızın keşfine ve kendi içinize bakabilme kapasitesine açılır — buna "içe bakış" diyoruz.',
+        'quote.text': 'Birey, çocuk ya da yetişkin, yalnızca oyun oynarken yaratıcı olabilir.',
+        'quote.author': '— D. W. Winnicott, Oyun ve Gerçeklik',
+        'about.eyebrow': 'Hakkımda',
+        'about.heading': 'Çoğul bir bakış: varoluş, beden, bilinçdışı',
+        'about.p1': "Yüksek lisansımı (Master 2) Lumière Lyon 2 Üniversitesi'nde Klinik Psikanalitik Psikoloji alanında tamamladım. Bugün klinik psikolog olarak yetişkinler ve ergenlerle çalışıyorum.",
+        'about.p2': 'Psikanalitik gelenek içinde yetiştim; zamanla pratiğime başka akımları da kattım: modern insanın halini — yalnızlık, izolasyon, anlamsızlık, ölüm kaygısı — ciddiye alan varoluşçu terapi; aldığım eğitimler aracılığıyla beden ve sinir sistemi üzerine çalışma; ve bedenle zihni birbirine bağlamanın bir yolu olarak bilinçli farkındalık ve meditasyon.',
+        'about.p3': 'Amaç, iç dünyanızı kendi tekilliği ve öznelliği içinde keşfetmek: dünyayı, ilişkileri ve acıyla kurduğunuz ilişkiyi nasıl temsil ettiğinizi anlamak. Birlikte anlam vermeye — ve bazen de sökülmeyi bekleyeni sökmeye — çalışırız.',
+        'stat1.label': 'Yıllık deneyim',
+        'stat2.label': 'Klinik Psikanalitik Psikoloji',
+        'stat3.label': 'Seanslar şimdilik online',
+        'experience.eyebrow': 'Deneyim',
+        'experience.intro': 'Deneyimim, insan ilişkisi içindeki farklı acı biçimlerinden beslendi: sosyal hizmetler, çocuk ve ergen psikiyatrisi ve bugün bireysel psikoterapi görüşmeleri.',
+        'exp1.dates': '2025 — Halen',
+        'exp1.title': 'Klinik psikolog',
+        'exp1.domain': 'Çocuk ve ergen psikiyatrisi — Paris ve Poissy',
+        'exp1.desc': 'Çocuk ve ergen psikiyatrisinde terapötik takip. Bireysel görüşmeler, klinik değerlendirmeler ve multidisipliner ekip toplantılarına katılım.',
+        'exp2.dates': '2023 — Halen',
+        'exp2.title': 'Terapist',
+        'exp2.desc': 'Türkçe konuşan yetişkinler için online psikodinamik psikoterapi. Kaygı, depresyon ve kimlik sorularıyla ilişkili acıların ele alınması.',
+        'exp3.title': 'Klinik psikolog',
+        'exp3.domain': 'Sosyal hizmetler — Paris',
+        'exp3.desc': 'Sosyal hizmetler ve çocuk koruma çerçevesinde, güçlük içindeki çocuk, ergen ve ailelere psikolojik destek.',
+        'publications.eyebrow': 'Yayınlar',
+        'publications.intro': 'Psikanalitik düşüncenin yayılmasına katkıda bulunmak — Fransızca ve Türkçe.',
+        'pub1.title': 'Melanie Klein: Hayatı ve Çalışmaları',
+        'pub1.sub': 'Psikolektif',
+        'pub2.title': 'Tekrar Bir Araya Gelebilmek için Birleşmek: Ergenlikte Aile Bağları',
+        'pub2.sub': 'Psikolektif Dergisi, Sayı 21',
+        'pub3.title': 'Duygusal Yaralardan Bedensel Duyumlara Bir Yolculuk: Bağımlılık',
+        'pub3.sub': 'Psikolektif',
+        'pub4.title': 'Psikanalizde Narsistik Çözümleme',
+        'pub4.sub': 'Onto Dergisi, 2024',
+        'translation.title': 'Çeviriler',
+        'translation.desc': "Psike İstanbul tarafından düzenlenen, psikanalist <strong>René Roussillon</strong>'un <em>« Oyun ve Simgeleştirme »</em> seminerinin çevirisi.",
+        'translation.desc2': '<a href="https://www.simurgkitabevi.com/yansitma-psikopatoloji-ve-projektif-testler-dergisi-bagimliliklar-1-sayi-35-temmuz-2021" target="_blank" class="underline decoration-warm-400 underline-offset-2 hover:text-stone-900"><strong>Yansıtma — Psikopatoloji ve Projektif Testler Dergisi</strong></a>\'nin Temmuz 2021 tarihli <em>« Bağımlılıklar – 1 »</em> (35. Sayı) dosyası için yapılan makale çevirisi.',
+        'contact.eyebrow': 'İletişim',
+        'contact.heading': 'Randevu alın',
+        'contact.intro': 'İlk adım çoğu zaman en zor olanıdır. Talebinizi daha iyi anlayabilmem için bir ilk klinik görüşme yapmak üzere benimle iletişime geçebilirsiniz. Sonraki seanslar gibi, bu ilk görüşme de ücretlidir.',
+        'contact.locationDesc': 'Seanslar şu anda yalnızca online yapılmaktadır',
+        'contact.langsDesc': 'Seanslar bu üç dilden birinde yapılabilir',
+        'contact.emailDesc': '48 saat içinde yanıt',
+        'contact.linkedinDesc': 'Mesleki paylaşımlarımı takip edin',
+        'form.name': 'Ad Soyad',
+        'form.namePlaceholder': 'Adınız',
+        'form.email': 'E-posta',
+        'form.emailPlaceholder': 'eposta@ornek.com',
+        'form.subject': 'Konu',
+        'form.subject1': 'Randevu talebi',
+        'form.subject2': 'Terapi hakkında soru',
+        'form.subject3': 'Mesleki iş birliği',
+        'form.subject4': 'Diğer',
+        'form.message': 'Mesaj',
+        'form.messagePlaceholder': 'Talebinizi kısaca anlatın...',
+        'form.send': 'Gönder',
+        'form.note': 'Bilgileriniz gizlidir ve paylaşılmaz.',
+        'form.alert': 'Mesajınız için teşekkürler. En kısa sürede size döneceğim.',
+        'footer.role': 'Klinik psikolog ve psikoterapist',
+        'footer.adeli': 'ADELI numarası talep üzerine',
       }
     };
 
@@ -675,7 +762,9 @@
       btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang-btn')));
     });
 
-    applyLang('fr');
+    // Langue par défaut : celle du navigateur si elle est disponible, sinon le français
+    const browserLang = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+    applyLang(translations[browserLang] ? browserLang : 'fr');
 
     // Fade in on scroll
     const observer = new IntersectionObserver((entries) => {
